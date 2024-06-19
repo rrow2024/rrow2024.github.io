@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}
+        {{ page.title | prepend: "RROW 2024 | " }}
+    {% else %}
+        RROW 2024
+    {% endif %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #34495e;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-banner nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .nav-banner nav a:hover {
+            background-color: #1abc9c;
+        }
+        .banner {
+            position: relative;
+            background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            margin-top: 45px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-banner">
+        <nav>
+            <a href="{{ site.baseurl }}/">Home</a>
+            <a href="{{ site.baseurl }}/speakers">Speakers</a>
+            <a href="{{ site.baseurl }}/call-for-papers">Call for Papers</a>
+            <a href="{{ site.baseurl }}/challenges">Challenges</a>
+            <a href="{{ site.baseurl }}/schedule">Schedule</a>
+            <a href="{{ site.baseurl }}/organizers">Organizers</a>
+        </nav>
+    </div>
+    <div class="banner">
+        <div class="banner-content">
+            {% if page.banner-title %}
+                <h2>{{ page.banner-title }}</h2>
+            {% elsif page.title %}
+                <h2>{{ page.title }}</h2>
+            {% endif %}
+            {% if page.banner-subtitle %}
+                <p>{{ page.banner-subtitle }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="content">
+        {{ content }}
+    </div>
+    <footer>
+        <p>&copy; TODO: Copyright stuff?</p>
+    </footer>
+</body>
+</html>
