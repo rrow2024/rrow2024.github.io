@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-# After changing this file, delete Gemfile.lock, then run `bundle install`.
+# After changing this file, run `bundle install`.
 # To run the website, run `bundle exec jekyll serve`.
 
 # This replaces gem "jekyll" for GitHub Pages.
@@ -8,6 +8,7 @@ gem "github-pages", "~> 231", group: :jekyll_plugins
 
 # Themes
 gem "minima", "~> 2.5"
+
 
 # Other Jekyll plugins
 group :jekyll_plugins do

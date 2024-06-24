@@ -26,7 +26,10 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Build settings
-# theme: jekyll-theme-minimal
+# remote_theme: pages-themes/minimal@v0.2.0
+theme: minima
+plugins:
+    - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.

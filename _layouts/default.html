@@ -18,19 +18,40 @@
             position: fixed;
             top: 0;
             left: 0;
+            height: 46px;
             width: 100%;
             background-color: #34495e;
             z-index: 1000;
-        }
-        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-banner .menu-button {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            padding-left: 20px;
+        }
+        .nav-banner .site-title {
+            font-size: 20px;
+            color: white;
+            padding-left: 20px;
+            padding-right: 10px;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .nav-banner nav {
+            display: flex;
+            height: 100%;
         }
         .nav-banner nav a {
+            display: flex;
+            height: 100%;
             color: white;
-            padding: 14px 20px;
+            padding: 0px 20px;
             text-decoration: none;
-            text-align: center;
+            align-items: center;
         }
         .nav-banner nav a:hover {
             background-color: #1abc9c;
@@ -40,7 +61,7 @@
             background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center;
             background-size: cover;
             color: white;
-            margin-top: 45px;
+            margin-top: 46px;
             padding: 60px 20px;
             text-align: center;
         }
@@ -69,10 +90,57 @@
             padding: 20px;
             margin-bottom: 20px;
         }
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #34495e;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 46px;
+            z-index: 1001;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #1abc9c;
+        }
+        .sidebar .close-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 15px;
+            font-size: 36px;
+        }
+        /* Choose max-width such that the navigation buttons in the header can be comfortably displayed; otherwise we use the sidebar for naviagtion. */
+        @media (max-width: 896px) {
+            .nav-banner nav {
+                display: none;
+            }
+            .nav-banner .menu-button {
+                display: block;
+            }
+            .sidebar {
+                left: -250px;
+            }
+            .sidebar.open {
+                left: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="nav-banner">
+        <span class="menu-button" onclick="toggleSidebar()">☰</span>
+        <div class="site-title">RROW 2024</div>
         <nav>
             <a href="{{ site.baseurl }}/">Home</a>
             <a href="{{ site.baseurl }}/speakers">Speakers</a>
@@ -81,6 +149,15 @@
             <a href="{{ site.baseurl }}/schedule">Schedule</a>
             <a href="{{ site.baseurl }}/organizers">Organizers</a>
         </nav>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="close-button" onclick="toggleSidebar()">×</a>
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="{{ site.baseurl }}/speakers">Speakers</a>
+        <a href="{{ site.baseurl }}/call-for-papers">Call for Papers</a>
+        <a href="{{ site.baseurl }}/challenges">Challenges</a>
+        <a href="{{ site.baseurl }}/schedule">Schedule</a>
+        <a href="{{ site.baseurl }}/organizers">Organizers</a>
     </div>
     <div class="banner">
         <div class="banner-content">
@@ -100,5 +177,16 @@
     <footer>
         <p>&copy; TODO: Copyright stuff?</p>
     </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.classList.contains("open")) {
+                sidebar.classList.remove("open");
+            } else {
+                sidebar.classList.add("open");
+            }
+        }
+    </script>
 </body>
 </html>
