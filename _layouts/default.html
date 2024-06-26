@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: "en-US" }}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}
-        {{ page.title | prepend: "RROW 2024 | " }}
-    {% else %}
-        RROW 2024
-    {% endif %}</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <title>
+        {% if page.title %}
+            {{ page.title | prepend: "RROW 2024 | " }}
+        {% else %}
+            RROW 2024
+        {% endif %}
+    </title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    {% seo %}
+    {% include head-custom.html %}
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
         .nav-banner {
             position: fixed;
             top: 0;
@@ -62,40 +66,6 @@
         }
         .nav-banner nav a:hover {
             background-color: #1abc9c;
-        }
-        .banner {
-            position: relative;
-            background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center;
-            background-size: cover;
-            color: white;
-            margin-top: 46px;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .banner::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-        .banner-content {
-            position: relative;
-            z-index: 2;
-        }
-        .content {
-            padding: 20px;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section-box {
-            background-color: #ecf0f1;
-            padding: 20px;
-            margin-bottom: 20px;
         }
         .sidebar {
             position: fixed;
@@ -156,9 +126,31 @@
                 left: 0;
             }
         }
+        #header_wrap {
+            position: relative;
+            background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center;
+            background-size: cover;
+            margin-top: 46px;
+        }
+        #header_wrap::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        #header_wrap .inner {
+            text-align: center;
+            z-index: 2;
+        }
     </style>
 </head>
+
 <body>
+    <!-- HEADER -->
     <div class="nav-banner">
         <span class="menu-button" onclick="toggleSidebar()">☰</span>
         <div class="site-title">RROW 2024</div>
@@ -180,25 +172,37 @@
         <a href="{{ site.baseurl }}/schedule">Schedule</a>
         <a href="{{ site.baseurl }}/organizers">Organizers</a>
     </div>
-    <div class="banner">
-        <div class="banner-content">
+    <div id="header_wrap" class="outer">
+        <header class="inner">
             {% if page.banner-title %}
-                <h2>{{ page.banner-title }}</h2>
+                <h1 id="project_title">{{ page.banner-title }}</h2>
             {% elsif page.title %}
-                <h2>{{ page.title }}</h2>
+                <h1 id="project_title">{{ page.title }}</h2>
             {% endif %}
             {% if page.banner-subtitle %}
-                <p>{{ page.banner-subtitle }}</p>
+                <h2 id="project_tagline">{{ page.banner-subtitle }}</p>
             {% endif %}
-        </div>
+        </header>
     </div>
-    <div class="content">
-        {{ content }}
-    </div>
-    <footer>
-        <p>&copy; TODO: Copyright stuff?</p>
-    </footer>
 
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        {{ content }}
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        {% if site.github.is_project_page %}
+        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+    
+    <!-- SCRIPT -->
     <script>
         function toggleSidebar() {
             var sidebar = document.getElementById("sidebar");
