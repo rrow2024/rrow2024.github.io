@@ -5,8 +5,14 @@
 
 th + th {
   border-left: 1px solid #FFFFFF;
- }
+}
  
 thead tr + tr {
   border-top: 1px solid #FFFFFF;
- }
+}
+ 
+img {
+  display: block;
+  margin: 10px auto; /* Center the image horizontally with top and bottom margins */
+  max-width: 98%; /* Ensure the image is responsive and fits within the container */
+}
