@@ -1,0 +1,122 @@
+---
+layout: default
+title: Challenge
+banner-title: Fancy Workshop Challenge Name
+banner-subtitle: Tagline or description for said challenge
+---
+
+<section id="introduction">
+    <h2>A Benchmark for Out-of-Distribution Tracking</h2>
+    <p>In open-world scenarios, such as automated driving, the presence of objects not seen during training can lead to inaccurate predictions and safety-critical situations, in particular when such unknown objects appear on the road. As in many applications images do not come as single frames, but are embedded in video sequences, tracking of these objects therefore is the logical next step past detection. Our benchmark addresses two tasks: detection and segmentation of previously-unseen objects; tracking of these unknown objects over subsequent frames. We provide two corresponding datasets together with a test suite, performing an in-depth method analysis.</p>
+    <img src="{{ '/assets/images/tracking.png' | relative_url }}" alt="Multiple frames of segmented video data" style="width:100%;">
+</section>
+<section id="datasets">
+    <h2>Datasets</h2>
+    
+    <h3>Street Obstacle Sequences (SOS)</h3>
+    <ul>
+        <li>The given scenes are shown from a perspective of a vehicle that is approaching objects placed on the street, starting from a distance of 20 meters to the street obstacle.</li>
+        <li>Each of the 13 different object corresponds to a class that is semantically out-of-distribution according to the <a href="https://www.cityscapes-dataset.com/">Cityscapes</a> labeling policy (e.g. bags, umbrellas, balls, toys, or scooters).</li>
+        <li>20 real-world video sequences recorded at a rate of 25 frames per second.</li>
+        <li>Every eighth frame is labeled yielding a total number of 1,129 pixel-accurately labeled frames.</li>
+    </ul>
+    <img src="{{ '/assets/images/sos1.jpg' | relative_url }}" alt="Example image from the SOS dataset" style="width:100%;">
+    
+    <h3>Wuppertal Obstacle Sequences (WOS)</h3>
+    <ul>
+        <li>While the SOS dataset considers static OOD objects located on the street, WOS provides additional moving OOD objects.</li>
+        <li>Moving objects are mostly dogs, rolling or bouncing balls, skateboards or bags and were captured with either a static or a moving camera from the viewpoint of a vehicle.</li>
+        <li>44 real-world video sequences.</li>
+        <li>Every eighth frame is labeled yielding a total number of 938 pixel-accurately labeled frames.</li>
+    </ul>
+    <img src="{{ '/assets/images/wos2.png' | relative_url }}" alt="Example image from the WOS dataset" style="width:100%;">
+    
+    <h3>Labeling Policy</h3>
+    <p>The pixel-level annotations of both datasets include three classes:</p>
+    <ul>
+        <li>street obstacle / OOD</li>
+        <li>street / not OOD</li>
+        <li>void</li>
+    </ul>
+    <p>Image regions outside the drivable area are labeled as <em>void</em> and are ignored during evaluation. Furthermore, the OOD objects are provided with tracking IDs in consecutive frames.</p>
+    <img src="{{ '/assets/images/gt.png' | relative_url }}" alt="Illustration of the labeling policy" style="width:100%;">
+</section>
+<section id="leaderboard">
+    <h2>Leaderboard</h2>
+    
+    <h3>Evaluation Metrics</h3>
+    <ul>
+        <li>OOD Segmentation
+            <ul>
+                <li>\(\text{AUPRC}\) : pixel-wise area under precision recall curve</li>
+                <li>\(\text{FPR}_{95}\) : pixel-wise false positive rate at a true positive rate of 95%</li>
+                <li>\(\overline{\text{F}}_1\) : component-wise \(\text{F}_1\)-score averaged over different detection thresholds</li>
+            </ul>
+        </li>
+        <li>OOD Segmentation
+            <ul>
+                <li>\(\text{MOTA}\) : multiple object tracking accuracy</li>
+                <li>\(\text{MOTP}\) : multiple object tracking precision</li>
+            </ul>
+        </li>
+    </ul>
+    For a more detailed explanation of the metrics, we refer to our <a href="https://openaccess.thecvf.com/content/ACCV2022/html/Maag_Two_Video_Data_Sets_for_Tracking_and_Retrieval_of_Out_ACCV_2022_paper.html">paper</a>.
+    
+    <h3>Street Obstacle Sequences (SOS)</h3>
+    <table style="text-align:center;">
+      <thead>
+      <tr>
+        <th></th>
+        <th colspan="3">OOD Segmentation</th>
+        <th colspan="2">OOD Tracking</th>
+      </tr>
+      <tr>
+        <th>Method</th>
+        <th>\(\text{AUPRC}\ \uparrow\)</th>
+        <th>\(\text{FPR}_{95}\ \downarrow\)</th>
+        <th>\(\overline{\text{F}}_1\ \uparrow\)</th>
+        <th>\(\text{MOTA}\ \uparrow\)</th>
+        <th>\(\text{MOTP}\ \downarrow\)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>baseline</td>
+        <td>\(85.20\)</td>
+        <td>\(1.30\)</td>
+        <td>\(50.40\)</td>
+        <td>\(0.32\)</td>
+        <td>\(12.45\)</td>
+      </tr>
+      </tbody>
+    </table>
+    
+    <h3>Wuppertal Obstacle Sequences (WOS)</h3>
+    <table style="text-align:center;">
+      <thead>
+      <tr>
+        <th></th>
+        <th colspan="3">OOD Segmentation</th>
+        <th colspan="2">OOD Tracking</th>
+      </tr>
+      <tr>
+        <th>Method</th>
+        <th>\(\text{AUPRC}\ \uparrow\)</th>
+        <th>\(\text{FPR}_{95}\ \downarrow\)</th>
+        <th>\(\overline{\text{F}}_1\ \uparrow\)</th>
+        <th>\(\text{MOTA}\ \uparrow\)</th>
+        <th>\(\text{MOTP}\ \downarrow\)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>baseline</td>
+        <td>\(94.92\)</td>
+        <td>\(0.59\)</td>
+        <td>\(30.13\)</td>
+        <td>\(0.13\)</td>
+        <td>\(51.17\)</td>
+      </tr>
+      </tbody>
+    </table>
+</section>
