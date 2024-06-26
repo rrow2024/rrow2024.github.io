@@ -38,7 +38,7 @@
         .speakers-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            gap: 10px;
             justify-items: center;
             padding: 20px 0;
         }
@@ -286,17 +286,19 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
             {% if page.banner-title %}
-                <h1 id="project_title">
-                    {% assign words = page.banner-title | split: ' ' %}
-                    {% for word in words %}
-                        {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 7 or forloop.index == 8 %}
-                            <span style="color: rgb(90, 197, 192);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
-                        {% else %}
-                            {{ word }}
-                        {% endif %}
-                        {% unless forloop.last %} {% endunless %}
-                    {% endfor %}
-                </h1>
+                {% if page.url == "/" %}
+                    <h1 id="project_title">
+                        {% assign words = page.banner-title | split: ' ' %}
+                        {% for word in words %}
+                            {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 7 or forloop.index == 8 %}
+                                <span style="color: rgb(90, 197, 192);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
+                            {% else %}
+                                {{ word }}
+                            {% endif %}
+                            {% unless forloop.last %} {% endunless %}
+                        {% endfor %}
+                    </h1>
+                {% endif %}
             {% elsif page.title %}
                 <h1 id="project_title">{{ page.title }}</h2>
             {% endif %}
