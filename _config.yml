@@ -29,8 +29,8 @@ navigation:
       url: ""
     - title: Call for Papers
       url: call-for-papers
-    - title: Challenges
-      url: challenges
+    - title: Challenge
+      url: challenge
     - title: Schedule
       url: schedule
 
