@@ -64,6 +64,9 @@
             text-decoration: none;
             align-items: center;
         }
+        .nav-banner nav a.selected {
+            font-weight: bold;
+        }
         .nav-banner nav a:hover {
             background-color: #1abc9c;
         }
@@ -89,6 +92,9 @@
             color: white;
             display: block;
             transition: 0.3s;
+        }
+        .sidebar a.selected {
+            font-weight: bold;
         }
         .sidebar a:hover {
             background-color: #1abc9c;
@@ -155,22 +161,24 @@
         <span class="menu-button" onclick="toggleSidebar()">☰</span>
         <div class="site-title">RROW 2024</div>
         <nav>
-            <a href="{{ site.baseurl }}/">Home</a>
-            <a href="{{ site.baseurl }}/speakers">Speakers</a>
-            <a href="{{ site.baseurl }}/call-for-papers">Call for Papers</a>
-            <a href="{{ site.baseurl }}/challenges">Challenges</a>
-            <a href="{{ site.baseurl }}/schedule">Schedule</a>
-            <a href="{{ site.baseurl }}/organizers">Organizers</a>
+            {% for nav_target in site.navigation %}
+                {% if nav_target.title == page.title %}
+                    <a href="{{ site.baseurl }}/{{ nav_target.url }}" class="selected">{{ nav_target.title }}</a>
+                {% else %}
+                    <a href="{{ site.baseurl }}/{{ nav_target.url }}">{{ nav_target.title }}</a>
+                {% endif %}
+            {% endfor %}
         </nav>
     </div>
     <div class="sidebar" id="sidebar">
         <div class="close-button" onclick="toggleSidebar()">×</div>
-        <a href="{{ site.baseurl }}/">Home</a>
-        <a href="{{ site.baseurl }}/speakers">Speakers</a>
-        <a href="{{ site.baseurl }}/call-for-papers">Call for Papers</a>
-        <a href="{{ site.baseurl }}/challenges">Challenges</a>
-        <a href="{{ site.baseurl }}/schedule">Schedule</a>
-        <a href="{{ site.baseurl }}/organizers">Organizers</a>
+        {% for nav_target in site.navigation %}
+            {% if nav_target.title == page.title %}
+                <a href="{{ site.baseurl }}/{{ nav_target.url }}" class="selected">{{ nav_target.title }}</a>
+            {% else %}
+                <a href="{{ site.baseurl }}/{{ nav_target.url }}">{{ nav_target.title }}</a>
+            {% endif %}
+        {% endfor %}
     </div>
     <div id="header_wrap" class="outer">
         <header class="inner">
