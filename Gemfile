@@ -6,10 +6,6 @@ source "https://rubygems.org"
 # This replaces gem "jekyll" for GitHub Pages.
 gem "github-pages", "~> 231", group: :jekyll_plugins
 
-# Themes
-gem "minima", "~> 2.5"
-
-
 # Other Jekyll plugins
 group :jekyll_plugins do
   # gem "<name>", "~> <version>"
