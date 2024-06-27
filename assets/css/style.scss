@@ -3,6 +3,23 @@
 
 @import "{{ site.theme }}";
 
+:root {
+  --accent-color: #1abc9c;
+}
+
+h2.non-dotted { 
+    padding-bottom: 0px; background: none; 
+}
+
+a {
+  color: var(--accent-color);
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 th + th {
     border-left: 1px solid #FFFFFF;
 }
@@ -21,18 +38,10 @@ tbody tr:nth-child(even) {
 
 img {
       display: block;
-      margin: 10px auto; /* Center the image horizontally with top and bottom margins */
       max-width: 98%; /* Ensure the image is responsive and fits within the container */
 }
 
-h2.non-dotted { 
-    padding-bottom: 0px; background: none; 
-}
-
-.div-spacer { margin-bottom: 45px; }
-
 .section-box {
-    margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
 }
@@ -151,7 +160,7 @@ h2.non-dotted {
     align-items: center;
 }
 .nav-banner .menu-button:hover, .nav-banner .menu-button:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 .nav-banner .site-title {
     font-size: 20px;
@@ -177,7 +186,7 @@ h2.non-dotted {
     font-weight: bold;
 }
 .nav-banner nav a:hover, .nav-banner nav a:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 .sidebar {
     position: fixed;
@@ -206,7 +215,7 @@ h2.non-dotted {
     font-weight: bold;
 }
 .sidebar a:hover, .sidebar a:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 .sidebar .close-button {
     position: absolute;
@@ -224,7 +233,7 @@ h2.non-dotted {
     align-items: center;
 }
 .sidebar .close-button:hover, .sidebar .close-button:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 /* Choose max-width such that the navigation buttons in the header can be comfortably displayed; otherwise we use the sidebar for naviagtion. */
 @media (max-width: 640px) {
@@ -243,8 +252,8 @@ h2.non-dotted {
 }
 #header_wrap {
     position: relative;
-    background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center;
-    background-size: cover;
+    /* background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center; */
+    /* background-size: cover; */
     margin-top: 46px;
 }
 #header_wrap::before {
