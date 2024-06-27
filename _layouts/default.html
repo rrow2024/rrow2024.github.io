@@ -16,246 +16,6 @@
 
     {% seo %}
     {% include head-custom.html %}
-    
-    <style>
-        /*EDITS BY MARCO*/
-
-        /*I removed the underline after the h2 block*/
-        h2 { padding-bottom: 0px; font-size: 32px; background: url("") repeat-x bottom; }
-
-        .div-spacer { margin-bottom: 45px; }
-
-        .section-box {
-            margin: 0 auto;
-            max-width: 1200px;
-            padding: 20px;
-        }
-
-        .div-spacer {
-            margin-bottom: 20px;
-        }
-
-        .speakers-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            justify-items: center;
-            padding: 20px 0;
-        }
-
-        .speaker {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .speaker p {
-            color: black; /* or any color you prefer for the text */
-            text-decoration: none; /* Ensures it does not look like a link */
-        }
-
-        .speaker-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: #ccc;
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .speakers-container {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            }
-
-            .speaker-photo {
-                width: 80px;
-                height: 80px;
-            }
-        }
-
-        /* Adjustments for wider screens to ensure 4 items in a row */
-        @media (min-width: 769px) {
-            .speakers-container {
-                grid-template-columns: repeat(4, 1fr); /* This ensures 4 items in a row */
-            }
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block; /* Change to inline-block */
-            /* Center align the button */
-            text-align: center;
-        }
-
-        /* Add a container around the button for centering */
-        .container {
-            text-align: center;
-        }
-
-
-        .organizers-panel {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusts based on screen size, made smaller */
-            gap: 15px; /* Reduced gap for snug fit */
-        }
-
-        .organizer, .organizer-logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .organizer img, .organizer-logo img {
-            width: 90%; /* Adjusted to make images slightly smaller */
-            aspect-ratio: 1; /* Keeps the image square */
-        }
-
-        .organizer p {
-            margin-top: 8px; /* Reduced margin for snug fit */
-        }
-        /*END EDITS BY MARCO*/
-
-
-        .nav-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 46px;
-            width: 100%;
-            background-color: #34495e;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-left: 5px;
-        }
-        .nav-banner .menu-button {
-            display: none;
-            height: 36px;
-            width: 36px;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-            justify-content: center;
-            align-items: center;
-        }
-        .nav-banner .menu-button:hover {
-            background-color: #1abc9c;
-        }
-        .nav-banner .site-title {
-            font-size: 20px;
-            color: white;
-            padding-left: 10px;
-            padding-right: 10px;
-            text-align: left;
-            flex-grow: 1;
-        }
-        .nav-banner nav {
-            display: flex;
-            height: 100%;
-        }
-        .nav-banner nav a {
-            display: flex;
-            height: 100%;
-            color: white;
-            padding: 0px 15px;
-            text-decoration: none;
-            align-items: center;
-        }
-        .nav-banner nav a.selected {
-            font-weight: bold;
-        }
-        .nav-banner nav a:hover {
-            background-color: #1abc9c;
-        }
-        .sidebar {
-            position: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: top;
-            left: -250px;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #34495e;
-            overflow-x: hidden;
-            transition: 0.3s;
-            padding-top: 46px;
-            z-index: 1001;
-        }
-        .sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 18px;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-        .sidebar a.selected {
-            font-weight: bold;
-        }
-        .sidebar a:hover {
-            background-color: #1abc9c;
-        }
-        .sidebar .close-button {
-            position: absolute;
-            display: flex;
-            top: 0;
-            left: 0;
-            margin-left: 5px;
-            margin-top: 5px;
-            height: 36px;
-            width: 36px;
-            cursor: pointer;
-            font-size: 36px;
-            color: white;
-            justify-content: center;
-            align-items: center;
-        }
-        .sidebar .close-button:hover {
-            background-color: #1abc9c;
-        }
-        /* Choose max-width such that the navigation buttons in the header can be comfortably displayed; otherwise we use the sidebar for naviagtion. */
-        @media (max-width: 640px) {
-            .nav-banner nav {
-                display: none;
-            }
-            .nav-banner .menu-button {
-                display: flex;
-            }
-            .sidebar {
-                left: -250px;
-            }
-            .sidebar.open {
-                left: 0;
-            }
-        }
-        #header_wrap {
-            position: relative;
-            background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center;
-            background-size: cover;
-            margin-top: 46px;
-        }
-        #header_wrap::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-        #header_wrap .inner {
-            text-align: center;
-            z-index: 2;
-        }
-    </style>
 </head>
 
 <body>
@@ -285,23 +45,22 @@
     </div>
     <div id="header_wrap" class="outer">
         <header class="inner">
-            {% if page.banner-title %}
-                {% if page.url == "/" %}
-                    <h1 id="project_title">
-                        {% assign words = page.banner-title | split: ' ' %}
-                        {% for word in words %}
-                            {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 7 or forloop.index == 8 %}
-                                <span style="color: rgb(90, 197, 192);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
-                            {% else %}
-                                {{ word }}
-                            {% endif %}
-                            {% unless forloop.last %} {% endunless %}
-                        {% endfor %}
-                    </h1>
-                {% endif %}
-            {% elsif page.title %}
-                <h1 id="project_title">{{ page.title }}</h2>
+            <h1 id="project_title">
+            {% assign title = page.banner-title | default: page.title %}
+            {% if page.url == "/" %}
+                {% assign words = page.banner-title | split: ' ' %}
+                {% for word in words %}
+                    {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 7 or forloop.index == 8 %}
+                        <span style="color: rgb(90, 197, 192);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
+                    {% else %}
+                        {{ word }}
+                    {% endif %}
+                    {% unless forloop.last %} {% endunless %}
+                {% endfor %}
+            {% else %}
+                {{ title }}
             {% endif %}
+            </h1>
             {% if page.banner-subtitle %}
                 <h2 id="project_tagline">{{ page.banner-subtitle }}</p>
             {% endif %}
