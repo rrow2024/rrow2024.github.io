@@ -5,10 +5,16 @@
 
 :root {
   --accent-color: #1abc9c;
+  --nav-bar-color: #34495e;
+}
+
+section {
+    margin-bottom: 20px;
 }
 
 h2.non-dotted { 
-    padding-bottom: 0px; background: none; 
+    padding-bottom: 0px;
+    background: none; 
 }
 
 a {
@@ -41,60 +47,7 @@ img {
       max-width: 98%; /* Ensure the image is responsive and fits within the container */
 }
 
-.section-box {
-    max-width: 1200px;
-    padding: 20px;
-}
-
-.div-spacer {
-    margin-bottom: 20px;
-}
-
-.speakers-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    justify-items: center;
-    padding: 20px 0;
-}
-
-.speaker {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.speaker p {
-    color: black; /* or any color you prefer for the text */
-    text-decoration: none; /* Ensures it does not look like a link */
-}
-
-.speaker-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ccc;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .speakers-container {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .speaker-photo {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-/* Adjustments for wider screens to ensure 4 items in a row */
-@media (min-width: 769px) {
-    .speakers-container {
-        grid-template-columns: repeat(4, 1fr); /* This ensures 4 items in a row */
-    }
-}
-
+/* BTN-PRIMARY */
 .btn-primary {
     background-color: #007bff;
     color: white;
@@ -106,43 +59,18 @@ img {
     /* Center align the button */
     text-align: center;
 }
-
-/* Add a container around the button for centering */
 .container {
     text-align: center;
 }
 
-
-.organizers-panel {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusts based on screen size, made smaller */
-    gap: 15px; /* Reduced gap for snug fit */
-}
-
-.organizer, .organizer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.organizer img, .organizer-logo img {
-    width: 90%; /* Adjusted to make images slightly smaller */
-    aspect-ratio: 1; /* Keeps the image square */
-}
-
-.organizer p {
-    margin-top: 8px; /* Reduced margin for snug fit */
-}
-/*END EDITS BY MARCO*/
-
-
+/* NAVIGATION : SIDEBAR OR HEADER */
 .nav-banner {
     position: fixed;
     top: 0;
     left: 0;
     height: 46px;
     width: 100%;
-    background-color: #34495e;
+    background-color: var(--nav-bar-color);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -197,7 +125,7 @@ img {
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #34495e;
+    background-color: var(--nav-bar-color);
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 46px;
@@ -250,6 +178,8 @@ img {
         left: 0;
     }
 }
+
+/* BANNER */
 #header_wrap {
     position: relative;
     /* background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center; */
@@ -269,4 +199,64 @@ img {
 #header_wrap .inner {
     text-align: center;
     z-index: 2;
+}
+
+/* SPEAKERS */
+.speakers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding: 20px 0;
+}
+.speaker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #373737;
+}
+.speaker:hover, .speaker:focus{
+    text-decoration: none;
+}
+.speaker-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .speakers-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .speaker-photo {
+        width: 80px;
+        height: 80px;
+    }
+}
+/* Adjustments for wider screens to ensure 4 items in a row */
+@media (min-width: 769px) {
+    .speakers-container {
+        grid-template-columns: repeat(4, 1fr); /* This ensures 4 items in a row */
+    }
+}
+
+/* ORGANIZERS-PANEL */
+.organizers-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusts based on screen size, made smaller */
+    gap: 15px; /* Reduced gap for snug fit */
+}
+.organizer, .organizer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.organizer img, .organizer-logo img {
+    width: 90%; /* Adjusted to make images slightly smaller */
+    aspect-ratio: 1; /* Keeps the image square */
+}
+.organizer p {
+    margin-top: 8px; /* Reduced margin for snug fit */
 }
