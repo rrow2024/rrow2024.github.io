@@ -51,7 +51,7 @@
                 {% assign words = page.banner-title | split: ' ' %}
                 {% for word in words %}
                     {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 7 or forloop.index == 8 %}
-                        <span style="color: rgb(90, 197, 192);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
+                        <span style="color: var(--accent-color);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
                     {% else %}
                         {{ word }}
                     {% endif %}

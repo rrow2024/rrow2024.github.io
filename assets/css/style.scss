@@ -49,7 +49,7 @@ img {
 
 /* BTN-PRIMARY */
 .btn-primary {
-    background-color: #007bff;
+    background-color: var(--accent-color)/*#007bff*/;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
