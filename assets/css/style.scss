@@ -222,8 +222,10 @@ img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #ccc;
+    margin: 0;
     margin-bottom: 10px;
+    padding: 0;
+    border: none;
 }
 @media (max-width: 768px) {
     .speakers-container {
