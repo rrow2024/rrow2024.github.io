@@ -250,15 +250,45 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusts based on screen size, made smaller */
     gap: 15px; /* Reduced gap for snug fit */
 }
-.organizer, .organizer-logo {
+.organizer {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.organizer img, .organizer-logo img {
-    width: 90%; /* Adjusted to make images slightly smaller */
-    aspect-ratio: 1; /* Keeps the image square */
+.organizer img {
+    width: 90%; /* Adjusted to make images slightly smaller */ 
+    aspect-ratio: 1;
 }
 .organizer p {
     margin-top: 8px; /* Reduced margin for snug fit */
+}
+.organizer-logo {
+    display: inline-block;
+    width: 90%; /* Adjusted to make images slightly smaller */
+    padding: 5px;
+    border: 1px solid #ebebeb; /* Same border style as images */
+    box-shadow: 0 0 5px #ebebeb; /* Same box shadow as images */
+}
+/* This square white container makes it seem like all logos are square. Saves us some time in paint. */
+.organizer-logo .logo-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Maintains a square aspect ratio */ 
+    background-color: white;
+    overflow: hidden;
+}
+.organizer-logo .logo-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    width: auto; /* Ensure the image keeps its aspect ratio */
+    height: auto; /* Ensure the image keeps its aspect ratio */
+    display: block; /* Override global img display */
+    margin: 0; /* Override global img margin */
+    padding: 0; /* Override global img padding */
+    border: none; /* Remove border specific to image */
+    box-shadow: none; /* Remove box shadow specific to image */
 }
