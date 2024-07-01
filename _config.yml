@@ -31,8 +31,8 @@ navigation:
       url: call-for-papers
     - title: Challenge
       url: challenge
-    - title: Speakers
-      url: speakers
+    - title: Schedule
+      url: schedule
 
 # Build settings
 remote_theme: pages-themes/slate@v0.2.0
