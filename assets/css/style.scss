@@ -182,8 +182,8 @@ img {
 /* BANNER */
 #header_wrap {
     position: relative;
-    /* background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center; */
-    /* background-size: cover; */
+    background: url('{{ site.baseurl }}/assets/images/banner_image.jpeg') no-repeat center center;
+    background-size: cover;
     margin-top: 46px;
 }
 #header_wrap::before {
