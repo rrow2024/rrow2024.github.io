@@ -182,7 +182,7 @@ img {
 /* BANNER */
 #header_wrap {
     position: relative;
-    background: url('{{ site.baseurl }}/assets/images/banner_image.jpeg') no-repeat center center;
+    background: url('{{ site.baseurl }}/assets/images/banner_image.jpeg') no-repeat center bottom;
     background-size: cover;
     margin-top: 46px;
 }
