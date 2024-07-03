@@ -21,7 +21,7 @@
 <body>
     <!-- HEADER -->
     <div class="nav-banner">
-        <span class="menu-button" onclick="toggleSidebar()">☰</span>
+        <div class="menu-button" onclick="toggleSidebar()">☰</div>
         <div class="site-title">RROW 2024</div>
         <nav>
             {% for nav_target in site.navigation %}
@@ -51,7 +51,7 @@
                 {% assign words = page.banner-title | split: ' ' %}
                 {% for word in words %}
                     {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 7 or forloop.index == 8 %}
-                        <span style="color: rgb(90, 197, 192);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
+                        <span style="color: var(--accent-color);">{{ word | slice: 0, 1 }}</span>{{ word | slice: 1, word.size }}
                     {% else %}
                         {{ word }}
                     {% endif %}
@@ -81,6 +81,7 @@
         <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+        <p>In case of questions or unclear points, please contact rrow2024@gmail.com</p>
       </footer>
     </div>
     

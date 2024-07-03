@@ -3,6 +3,29 @@
 
 @import "{{ site.theme }}";
 
+:root {
+  --accent-color: #1abc9c;
+  --nav-bar-color: #34495e;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2.non-dotted { 
+    padding-bottom: 0px;
+    background: none; 
+}
+
+a {
+  color: var(--accent-color);
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 th + th {
     border-left: 1px solid #FFFFFF;
 }
@@ -21,73 +44,12 @@ tbody tr:nth-child(even) {
 
 img {
       display: block;
-      margin: 10px auto; /* Center the image horizontally with top and bottom margins */
       max-width: 98%; /* Ensure the image is responsive and fits within the container */
 }
 
-h2.non-dotted { 
-    padding-bottom: 0px; background: none; 
-}
-
-.div-spacer { margin-bottom: 45px; }
-
-.section-box {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-}
-
-.div-spacer {
-    margin-bottom: 20px;
-}
-
-.speakers-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    justify-items: center;
-    padding: 20px 0;
-}
-
-.speaker {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.speaker p {
-    color: black; /* or any color you prefer for the text */
-    text-decoration: none; /* Ensures it does not look like a link */
-}
-
-.speaker-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ccc;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .speakers-container {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .speaker-photo {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-/* Adjustments for wider screens to ensure 4 items in a row */
-@media (min-width: 769px) {
-    .speakers-container {
-        grid-template-columns: repeat(4, 1fr); /* This ensures 4 items in a row */
-    }
-}
-
+/* BTN-PRIMARY */
 .btn-primary {
-    background-color: #007bff;
+    background-color: var(--accent-color)/*#007bff*/;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -97,43 +59,18 @@ h2.non-dotted {
     /* Center align the button */
     text-align: center;
 }
-
-/* Add a container around the button for centering */
 .container {
     text-align: center;
 }
 
-
-.organizers-panel {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusts based on screen size, made smaller */
-    gap: 15px; /* Reduced gap for snug fit */
-}
-
-.organizer, .organizer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.organizer img, .organizer-logo img {
-    width: 90%; /* Adjusted to make images slightly smaller */
-    aspect-ratio: 1; /* Keeps the image square */
-}
-
-.organizer p {
-    margin-top: 8px; /* Reduced margin for snug fit */
-}
-/*END EDITS BY MARCO*/
-
-
+/* NAVIGATION : SIDEBAR OR HEADER */
 .nav-banner {
     position: fixed;
     top: 0;
     left: 0;
     height: 46px;
     width: 100%;
-    background-color: #34495e;
+    background-color: var(--nav-bar-color);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -151,7 +88,7 @@ h2.non-dotted {
     align-items: center;
 }
 .nav-banner .menu-button:hover, .nav-banner .menu-button:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 .nav-banner .site-title {
     font-size: 20px;
@@ -177,7 +114,7 @@ h2.non-dotted {
     font-weight: bold;
 }
 .nav-banner nav a:hover, .nav-banner nav a:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 .sidebar {
     position: fixed;
@@ -188,7 +125,7 @@ h2.non-dotted {
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #34495e;
+    background-color: var(--nav-bar-color);
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 46px;
@@ -206,7 +143,7 @@ h2.non-dotted {
     font-weight: bold;
 }
 .sidebar a:hover, .sidebar a:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 .sidebar .close-button {
     position: absolute;
@@ -224,7 +161,7 @@ h2.non-dotted {
     align-items: center;
 }
 .sidebar .close-button:hover, .sidebar .close-button:focus {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
 }
 /* Choose max-width such that the navigation buttons in the header can be comfortably displayed; otherwise we use the sidebar for naviagtion. */
 @media (max-width: 640px) {
@@ -241,9 +178,11 @@ h2.non-dotted {
         left: 0;
     }
 }
+
+/* BANNER */
 #header_wrap {
     position: relative;
-    background: url('{{ site.baseurl }}/assets/images/banner-image.png') no-repeat center center;
+    background: url('{{ site.baseurl }}/assets/images/banner_image.jpeg') no-repeat center bottom;
     background-size: cover;
     margin-top: 46px;
 }
@@ -260,4 +199,96 @@ h2.non-dotted {
 #header_wrap .inner {
     text-align: center;
     z-index: 2;
+}
+
+/* SPEAKERS */
+.speakers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding: 20px 0;
+}
+.speaker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #373737;
+}
+.speaker:hover, .speaker:focus{
+    text-decoration: none;
+}
+.speaker-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    border: none;
+}
+@media (max-width: 768px) {
+    .speakers-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .speaker-photo {
+        width: 80px;
+        height: 80px;
+    }
+}
+/* Adjustments for wider screens to ensure 4 items in a row */
+@media (min-width: 769px) {
+    .speakers-container {
+        grid-template-columns: repeat(4, 1fr); /* This ensures 4 items in a row */
+    }
+}
+
+/* ORGANIZERS-PANEL */
+.organizers-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusts based on screen size, made smaller */
+    gap: 15px; /* Reduced gap for snug fit */
+}
+.organizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.organizer img {
+    width: 90%; /* Adjusted to make images slightly smaller */ 
+    aspect-ratio: 1;
+}
+.organizer p {
+    margin-top: 8px; /* Reduced margin for snug fit */
+}
+.organizer-logo {
+    display: inline-block;
+    width: 90%; /* Adjusted to make images slightly smaller */
+    padding: 5px;
+    border: 1px solid #ebebeb; /* Same border style as images */
+    box-shadow: 0 0 5px #ebebeb; /* Same box shadow as images */
+}
+/* This square white container makes it seem like all logos are square. Saves us some time in paint. */
+.organizer-logo .logo-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Maintains a square aspect ratio */ 
+    background-color: white;
+    overflow: hidden;
+}
+.organizer-logo .logo-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    width: auto; /* Ensure the image keeps its aspect ratio */
+    height: auto; /* Ensure the image keeps its aspect ratio */
+    display: block; /* Override global img display */
+    margin: 0; /* Override global img margin */
+    padding: 0; /* Override global img padding */
+    border: none; /* Remove border specific to image */
+    box-shadow: none; /* Remove box shadow specific to image */
 }

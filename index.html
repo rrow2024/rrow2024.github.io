@@ -5,45 +5,44 @@ banner-title: Workshop on Robust Recognition in the Open World
 banner-subtitle: at the British Machine Vision Conference (BMVC) 2024
 ---
 
-<div id="overview" class="section-box">
-    <p>This workshop addresses the challenges deep neural networks face with unexpected scenes and environments that differ from training data. We focus on methods and datasets to improve AI robustness and adaptability for critical applications like automated driving, robotics, and medical imaging. 
-    <br><br>We invite researchers to submit their original or previously published works, contributing to high-quality talks and posters that will inspire and advance the community. 
-    <br><br>Join us on <strong>Nov 27-28</strong> in shaping the future of AI-driven computer vision. We are looking forward to your innovative contributions.</p>
-    <p style="color: gray; font-size: small;">Submission deadline: August 4th</p>
-
-    <!-- Added button and placeholder text -->
+<section id="overview">
+    <p>When a recognition AI, realized by a deep neural network (DNN), faces the open world, it will inevitably deal with unexpected scenes. This includes unknown objects and unknown environments / domains that are out of distribution (OOD) with respect to the data encountered during training. DNNs typically suffer from significant degradation of performance when facing OOD objects or domain shifts. This can be seen as the main obstacle for the application of AI driven perception in medicine, automated driving and open world robotics.</p>
+    <p>With the advent of vision transformers, large-scale foundation models and vision-language models, a new perspective towards significant progress on this set of problems arises. We invite researchers to submit their original or previously published works on methods and datasets that study and expand the capabilities of DNNs for recognition in an open world.</p>
     <div class="container">
         <a href="/call-for-papers" class="btn-primary">Submit a Paper</a>
     </div>
-</div>
-<div id="speaker-panel" class="section-box div-spacer">
+    <p>Join us on <strong>Nov 27-28</strong> in shaping the future of AI-driven computer vision. We are looking forward to your innovative contributions.</p>
+</section>
+
+<section id="speaker-panel">
     <h2 class="non-dotted">Speakers</h2>
     <div class="speakers-container">
-        <a href="speaker-placeholder.html" class="speaker">
-            <div class="speaker-photo" style="width: 100px; height: 100px; border-radius: 50%; background-color: #ccc;"></div>
+        <a href="/speakers" class="speaker">
+            <div class="speaker-photo" style="background-color: #ccc;"></div>
             <h3>Jiří Matas</h3>
             <p style="text-align: center; font-size: smaller;">Head of the Visual Recognition Group at the Center for Machine Perception, CTU Prague.</p>
         </a>
-        <a href="speaker-placeholder.html" class="speaker">
-            <div class="speaker-photo" style="width: 100px; height: 100px; border-radius: 50%; background-color: #ccc;"></div>
+        <a href="/speakers" class="speaker">
+            <div class="speaker-photo" style="background-color: #ccc;"></div>
             <h3>Petra Bevandic</h3>
-            <p style="text-align: center; font-size: smaller;">Software developer and PhD working at the University of Bielefeld.</p>
+            <p style="text-align: center; font-size: smaller;">Software developer and PostDoc working at the University of Bielefeld.</p>
         </a>
-        <a href="speaker-placeholder.html" class="speaker">
-            <div class="speaker-photo" style="width: 100px; height: 100px; border-radius: 50%; background-color: #ccc;"></div>
+        <a href="/speakers" class="speaker">
+            <div class="speaker-photo" style="background-color: #ccc;"></div>
             <h3>Robert Geirhos</h3>
-            <p style="text-align: center; font-size: smaller;">Software developer and PhD working at Google DeepMind.</p>
+            <p style="text-align: center; font-size: smaller;">Software developer and Research Scientist working at Google DeepMind.</p>
         </a>
-        <a href="speaker-placeholder.html" class="speaker">
-            <div class="speaker-photo" style="width: 100px; height: 100px; border-radius: 50%; background-color: #ccc;"></div>
+        <a href="/speakers" class="speaker">
+            <img src="{{ '/assets/images/speakers/toby_breckon_cropped.jpg' | relative_url }}" alt="Toby Breckon" class="speaker-photo">
             <h3>Toby Breckon</h3>
             <p style="text-align: center; font-size: smaller;">Professor in the department of computer science and engineering at Dirham University.</p>
         </a>
     </div>
-</div>
-<div class="section-box div-spacer">
-    <h2  class="non-dotted">Schedule</h2>
-    <p>Workshop Date: <strong>Nov 27-28</strong> (NOT SURE IF THIS IS THE FINAL VERSION OF THE SCHEDULE)</p>
+</section>
+
+<section id="schedule">
+    <h2  class="non-dotted">Tentative Schedule</h2>
+    <p>Workshop Date: <strong>Nov 27-28</strong></p>
     <div style="overflow-x: auto;">
         <table style="width:100%; border-collapse: collapse;">
             <thead>
@@ -109,56 +108,70 @@ banner-subtitle: at the British Machine Vision Conference (BMVC) 2024
                 <td>16:50 - 17:20</td>
                 <td>Best paper award, wrap up and closing remarks</td>
             </tr>
-            <!-- Add more rows as needed, alternating the background color -->
             </tbody>
         </table>
     </div>
-</div>
-<div class="section-box div-spacer">
+</section>
+
+<section id="challenge">
     <h2  class="non-dotted">Challenge</h2>
     <p>For this workshop, we invite participants to tackle the challenge of Open-World Object Detection and Tracking. Develop AI models that excel in detecting and tracking objects in diverse and unpredictable environments, addressing out-of-distribution (OOD) objects and domain shifts.</p>
+    <div class="container">
+        <a href="/challenge" class="btn-primary">Tackle the Challenge</a>
+    </div>
+</section>
 
-    <h3>Objectives</h3>
-    <ul>
-      <li><strong>Develop Robust Detection Algorithms</strong></li>
-      <li><strong>Enhance Domain Adaptation</strong></li>
-      <li><strong>Advance Tracking</strong></li>
-    </ul>
-    
-    <p>For more details, visit the <a href="challenge">Challenges Subpage</a>.</p>
-</div>
-<div class="section-box div-spacer">
+<section id="organizers">
     <h2  class="non-dotted">Organizers</h2>
     <div class="organizers-panel">
         <!-- First row with images and names -->
         <div class="organizer">
-            <img src="path/to/image1.jpg" alt="Organizer 1">
+            <img src="{{ '/assets/images/organizers/hanno_gottschalk_cropped.jpg' | relative_url }}" alt="Hanno Gottschalk">
+            <p>Hanno Gottschalk</p>
+        </div>
+        <div class="organizer">
+            <img src="{{ '/assets/images/organizers/hermann_blum.jpg' | relative_url }}" alt="Hermann Blum">
             <p>Hermann Blum</p>
         </div>
         <div class="organizer">
-            <img src="path/to/image2.jpg" alt="Organizer 2">
-            <p>Hanno Gottschalk<br>Kira Maag</p>
+            <img src="path/to/image3.jpg" alt="Organizer 3">
+            <p>Kira Maag</p>
         </div>
         <div class="organizer">
-            <img src="path/to/image3.jpg" alt="Organizer 3">
+            <img src="{{ '/assets/images/organizers/matthias_rottmann_cropped.jpg' | relative_url }}" alt="Matthias Rottmann">
             <p>Matthias Rottmann</p>
         </div>
         <div class="organizer">
-            <img src="path/to/image4.jpg" alt="Organizer 4">
+            <img src="{{ '/assets/images/organizers/sinisa_segvic_cropped.png' | relative_url }}" alt="Siniša Šegvić">
             <p>Siniša Šegvić</p>
         </div>
+    </div>
+    <div class="organizers-panel">
         <!-- Second row with logos only -->
         <div class="organizer-logo">
-            <img src="path/to/logo1.jpg" alt="ETH Zürich">
+            <div class="logo-container">
+                <img src="{{ '/assets/images/organizers/logo_zuerich_cropped.png' | relative_url }}" alt="Logo of ETH Zürich">
+            </div>
         </div>
         <div class="organizer-logo">
-            <img src="path/to/logo2.jpg" alt="TU Berlin">
+            <div class="logo-container">
+                <img src="{{ '/assets/images/organizers/logo_berlin_transparent.png' | relative_url }}" alt="Logo of TU Berlin">
+            </div>
         </div>
         <div class="organizer-logo">
-            <img src="path/to/logo3.jpg" alt="University of Wuppertal">
+            <div class="logo-container">
+                <img src="{{ '/assets/images/organizers/logo_bonn.jpeg' | relative_url }}" alt="Logo of University of Bonn">
+            </div>
         </div>
         <div class="organizer-logo">
-            <img src="path/to/logo4.jpg" alt="University of Zagreb">
+            <div class="logo-container">
+                <img src="{{ '/assets/images/organizers/logo_wuppertal_transparent.png' | relative_url }}" alt="Logo of University of Wuppertal">
+            </div>
+        </div>
+        <div class="organizer-logo">
+            <div class="logo-container">
+                <img src="{{ '/assets/images/organizers/logo_zagreb.jpg' | relative_url }}" alt="Logo of University of Zagreb">
+            </div>
         </div>
     </div>
-</div>
+</section>
