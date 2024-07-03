@@ -218,6 +218,9 @@ img {
 .speaker:hover, .speaker:focus{
     text-decoration: none;
 }
+.speaker:hover h3, .speaker:focus h3{
+    text-decoration: underline;
+}
 .speaker-photo {
     width: 100px;
     height: 100px;
@@ -291,4 +294,9 @@ img {
     padding: 0; /* Override global img padding */
     border: none; /* Remove border specific to image */
     box-shadow: none; /* Remove box shadow specific to image */
+}
+
+/* SCHEDULE PAGE */
+.bio{
+    padding-top: 0px;
 }
