@@ -6,7 +6,7 @@ banner-subtitle: at the British Machine Vision Conference (BMVC) 2024
 ---
 
 <section id="overview">
-    <p>When a recognition AI, realized by a deep neural network (DNN), faces the open world, it will inevitably deal with unexpected scenes. This includes unknown objects and unknown environments / domains that are out of distribution (OOD) with respect to the data encountered during training. DNNs typically suffer from significant degradation of performance when facing OOD objects or domain shifts. This can be seen as the main obstacle for the application of AI driven perception in medicine, automated driving and open world robotics.</p>
+    <p>When a recognition AI, realized by a deep neural network (DNN), faces the open world, it will inevitably deal with unexpected scenes. This includes unknown objects and unknown environments / domains that are out of distribution (OOD) with respect to the data encountered during training. DNNs typically suffer from significant degradation of performance when facing OOD objects or domain shifts. This can be seen as the main obstacle for the application of AI-driven perception in medicine, automated driving and open world robotics.</p>
     <p>With the advent of vision transformers, large-scale foundation models and vision-language models, a new perspective towards significant progress on this set of problems arises. We invite researchers to submit their original or previously published works on methods and datasets that study and expand the capabilities of DNNs for recognition in an open world.</p>
     <div class="container">
         <a href="/call-for-papers" class="btn-primary">Submit a Paper</a>
@@ -43,74 +43,7 @@ banner-subtitle: at the British Machine Vision Conference (BMVC) 2024
 <section id="schedule">
     <h2  class="non-dotted">Tentative Schedule</h2>
     <p>Workshop Date: <strong>Nov 27-28</strong></p>
-    <div style="overflow-x: auto;">
-        <table style="width:100%; border-collapse: collapse;">
-            <thead>
-            <tr>
-                <th>Time</th>
-                <th>Topic</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>9:00 - 9:15</td>
-                <td>Welcome</td>
-            </tr>
-            <tr>
-                <td>9:15 - 9:50</td>
-                <td>Plenary 1 – Jiri Matas</td>
-            </tr>
-            <tr>
-                <td>9:50 - 10:25</td>
-                <td>Plenary 2 – Petra Bevandic</td>
-            </tr>
-            <tr>
-                <td>10:25 - 10:45</td>
-                <td>Contributed talks 1-2</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Short break</td>
-            </tr>
-            <tr>
-                <td>11:00 - 12:00</td>
-                <td>Contributed talks 3-8</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Lunch break</td>
-            </tr>
-            <tr>
-                <td>13:30 - 14:05</td>
-                <td>Plenary 3 – Robert Geirhos</td>
-            </tr>
-            <tr>
-                <td>14:05 – 14:35</td>
-                <td>Contributed talks 9-11</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Short break</td>
-            </tr>
-            <tr>
-                <td>14:45 – 15:30</td>
-                <td>Poster session</td>
-            </tr>
-            <tr>
-                <td>15:30 - 16:15</td>
-                <td>Challenge session – OOD tracking on videos</td>
-            </tr>
-            <tr>
-                <td>16:15 – 16:50</td>
-                <td>Plenary 4 – Toby Breckon</td>
-            </tr>
-            <tr>
-                <td>16:50 - 17:20</td>
-                <td>Best paper award, wrap up and closing remarks</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    {% include schedule_table.html %}
 </section>
 
 <section id="challenge">
@@ -134,7 +67,7 @@ banner-subtitle: at the British Machine Vision Conference (BMVC) 2024
             <p>Hermann Blum</p>
         </div>
         <div class="organizer">
-            <img src="path/to/image3.jpg" alt="Organizer 3">
+            <img src="{{ '/assets/images/organizers/kira_maag_cropped.jpeg' | relative_url }}" alt="Kira Maag">
             <p>Kira Maag</p>
         </div>
         <div class="organizer">
@@ -142,7 +75,7 @@ banner-subtitle: at the British Machine Vision Conference (BMVC) 2024
             <p>Matthias Rottmann</p>
         </div>
         <div class="organizer">
-            <img src="path/to/image5.jpg" alt="Organizer 5">
+            <img src="{{ '/assets/images/organizers/sinisa_segvic_cropped.png' | relative_url }}" alt="Siniša Šegvić">
             <p>Siniša Šegvić</p>
         </div>
     </div>

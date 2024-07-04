@@ -1,12 +1,14 @@
 ---
 layout: default
 title: Challenge
+banner-title: Challenge
+banner-subtitle: A Benchmark for Out-of-Distribution Tracking
 ---
 
 <section id="introduction">
-    <h2>A Benchmark for Out-of-Distribution Tracking</h2>
+    <h2>Obstacle Sequence Challenge</h2>
     <p>In open-world scenarios, such as automated driving, the presence of objects not seen during training can lead to inaccurate predictions and safety-critical situations, in particular when such unknown objects appear on the road. As in many applications images do not come as single frames, but are embedded in video sequences, tracking of these objects therefore is the logical next step past detection. Our benchmark addresses two tasks: detection and segmentation of previously-unseen objects; tracking of these unknown objects over subsequent frames. We provide two corresponding datasets together with a test suite, performing an in-depth method analysis.</p>
-    <img src="{{ '/assets/images/tracking.png' | relative_url }}" alt="Multiple frames of segmented video data" style="width:100%;">
+    <img src="{{ '/assets/images/sequence_43.gif' | relative_url }}" alt="Subsequent frames of segmented video data" style="width:100%;">
 </section>
 
 <section id="datasets">
@@ -19,6 +21,9 @@ title: Challenge
         <li>20 real-world video sequences recorded at a rate of 25 frames per second.</li>
         <li>Every eighth frame is labeled yielding a total number of 1,129 pixel-accurately labeled frames.</li>
     </ul>
+    <div class="container">
+        <a href="https://zenodo.org/records/7144906" class="btn-primary">Download the Dataset</a>
+    </div>
     <img src="{{ '/assets/images/sos1.jpg' | relative_url }}" alt="Example image from the SOS dataset" style="width:100%;">
     
     <h3>Wuppertal Obstacle Sequences (WOS)</h3>
@@ -28,6 +33,9 @@ title: Challenge
         <li>44 real-world video sequences.</li>
         <li>Every eighth frame is labeled yielding a total number of 938 pixel-accurately labeled frames.</li>
     </ul>
+    <div class="container">
+        <a href="https://zenodo.org/records/12188586" class="btn-primary">Download the Dataset</a>
+    </div>
     <img src="{{ '/assets/images/wos2.png' | relative_url }}" alt="Example image from the WOS dataset" style="width:100%;">
     
     <h3>Labeling Policy</h3>
@@ -60,67 +68,53 @@ title: Challenge
             </ul>
         </li>
     </ul>
-    For a more detailed explanation of the metrics, we refer to our <a href="https://openaccess.thecvf.com/content/ACCV2022/html/Maag_Two_Video_Data_Sets_for_Tracking_and_Retrieval_of_Out_ACCV_2022_paper.html">paper</a>.
+    <p>For a more detailed explanation of the metrics, we refer to our <a href="https://openaccess.thecvf.com/content/ACCV2022/html/Maag_Two_Video_Data_Sets_for_Tracking_and_Retrieval_of_Out_ACCV_2022_paper.html">paper</a>.</p>
     
     <h3>Street Obstacle Sequences (SOS)</h3>
-    <div style="overflow-x: auto;">
-        <table style="text-align:center;width:100%;">
-          <thead>
-          <tr>
-            <th></th>
-            <th colspan="3">OOD Segmentation</th>
-            <th colspan="2">OOD Tracking</th>
-          </tr>
-          <tr>
-            <th>Method</th>
-            <th>\(\text{AUPRC}\ \uparrow\)</th>
-            <th>\(\text{FPR}_{95}\ \downarrow\)</th>
-            <th>\(\overline{\text{F}}_1\ \uparrow\)</th>
-            <th>\(\text{MOTA}\ \uparrow\)</th>
-            <th>\(\text{MOTP}\ \downarrow\)</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>baseline</td>
-            <td>\(85.20\)</td>
-            <td>\(1.30\)</td>
-            <td>\(50.40\)</td>
-            <td>\(0.32\)</td>
-            <td>\(12.45\)</td>
-          </tr>
-          </tbody>
-        </table>
-    </div>
+    {% include leaderboard_sos_table.html %}
     
     <h3>Wuppertal Obstacle Sequences (WOS)</h3>
+    {% include leaderboard_wos_table.html %}
+</section>
+
+<section id="submission-guidelines">
+    <h2>Submission Guidelines</h2>
+    
+    <h3>Evaluation of Your Method</h3>
+    <p>In order to evaluate your method, we provide:</p>
+    <ul>
+        <li>the labels of both datasets, SOS and WOS</li>  
+        <li><a href="github_tba">code</a> available on GitHub that computes the evaluation metrics given OOD heatmaps and tracking IDs obtained by your method</li>
+    </ul>
+    
+    <h3>Participate in the Challenge</h3>
+    <p>Please send your results including a link to your GitHub repository (and, if available, the corresponding paper) to the following mail: <a href="mailto:rrow2024@gmail.com">rrow2024@gmail.com</a>.</p>
+</section>
+
+<section id="important-dates">
+    <h2>Important Dates & Deadlines</h2>
+    <p>While preparing your challenge submission, please keep the following dates in mind.
+    <br>All deadlines are Anywhere on Earth (UTC-12).</p>
     <div style="overflow-x: auto;">
-        <table style="text-align:center;width:100%;">
-          <thead>
-          <tr>
-            <th></th>
-            <th colspan="3">OOD Segmentation</th>
-            <th colspan="2">OOD Tracking</th>
-          </tr>
-          <tr>
-            <th>Method</th>
-            <th>\(\text{AUPRC}\ \uparrow\)</th>
-            <th>\(\text{FPR}_{95}\ \downarrow\)</th>
-            <th>\(\overline{\text{F}}_1\ \uparrow\)</th>
-            <th>\(\text{MOTA}\ \uparrow\)</th>
-            <th>\(\text{MOTP}\ \downarrow\)</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>baseline</td>
-            <td>\(94.92\)</td>
-            <td>\(0.59\)</td>
-            <td>\(30.13\)</td>
-            <td>\(0.13\)</td>
-            <td>\(51.17\)</td>
-          </tr>
-          </tbody>
+        <table style="width:100%;">
+            <thead>
+            <tr>
+                <th>Milestone</th>
+                <th style="width:25%;">Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Challenge submission deadline</td>
+                <td>09/14/2024</td>
+            </tr>
+            <tr>
+                <td>Challenge winner notification</td>
+                <td>09/16/2024</td>
+            </tr>
+            </tbody>
         </table>
     </div>
+    <p>This challenge is maintained by the Technical University of Berlin and will remain open after the submission deadline has expired.</p>
+    <p>If you want to participate in our <a href="{{ site.baseurl }}/call-for-papers">Call for Papers</a>, different deadlines apply, see <a href="{{ site.baseurl }}/call-for-papers#important-dates">here</a>.</p>
 </section>
