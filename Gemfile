@@ -9,6 +9,7 @@ gem "github-pages", "~> 231", group: :jekyll_plugins
 # Other Jekyll plugins
 group :jekyll_plugins do
   # gem "<name>", "~> <version>"
+  gem "jekyll-sitemap"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem and associated library.
