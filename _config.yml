@@ -20,10 +20,14 @@
 
 title: Workshop on Robust Recognition in the Open World
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  The RROW Workshop at the British Machine Vision Conference (BMVC) 2024 offers a platform for research on the frontiers 
+  of artificial intelligence (AI) for computer vision (CV), in particular recognition in the open world.
+  When a recognition AI, realized by a deep neural network (DNN), faces the open world, it will inevitably deal with unexpected scenes.
+  This includes unknown objects and unknown environments / domains that are out of distribution (OOD) with respect to the data encountered during training.
+  DNNs typically suffer from significant degradation of performance when facing OOD objects or domain shifts.
+  This can be seen as the main obstacle for the application of AI-driven perception in medicine, automated driving and open world robotics.
 baseurl: "" # the subpath of your site, e.g. /blog
+google-site-verification: AOKtwPHPHAN41zhNGYi5f2aZlaZMVAA1p1OtD08XXIo
 navigation:
     - title: Home
       url: ""
