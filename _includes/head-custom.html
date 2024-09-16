@@ -3,6 +3,21 @@
 <!-- Setup Google Analytics -->
 {% include head-custom-google-analytics.html %}
 
+<!-- Enable jQuery Tables -->
+{%- if page.datatable == true -%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  <!--Add JQuery-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"> <!--add style sheet-->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script> <!--add dataTables-->
+<script>
+    $(document).ready( function () {
+    $('table.datatable').DataTable();
+    } );
+</script>
+{% endif %}
+
+<!-- Enable MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 <!-- You can set your favicon here -->
 <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/images/logo_BMWC_WS.ico' | relative_url }}">
 
