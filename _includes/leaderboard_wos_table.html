@@ -3,66 +3,66 @@
       <thead>
       <tr>
         <th></th>
-        <th colspan="3" style="text-align:center;">OOD Segmentation</th>
         <th colspan="2" style="text-align:center;">OOD Tracking</th>
+        <th colspan="3" style="text-align:center;">OOD Segmentation</th>
       </tr>
       <tr>
         <th class="no-sort" style="text-align:center;">Method</th>
+        <th>\(\text{MOTA}\ \uparrow\)</th>
+        <th>\(\text{MOTP}\ \downarrow\)</th>
         <th>\(\text{AUPRC}\ \uparrow\)</th>
         <th>\(\text{FPR}_{95}\ \downarrow\)</th>
         <th>\(\overline{\text{F}}_1\ \uparrow\)</th>
-        <th>\(\text{MOTA}\ \uparrow\)</th>
-        <th>\(\text{MOTP}\ \downarrow\)</th>
       </tr>
       </thead>
       <tbody>
       <tr>
         <td><a href="https://openaccess.thecvf.com/content/ACCV2022/papers/Maag_Two_Video_Data_Sets_for_Tracking_and_Retrieval_of_Out_ACCV_2022_paper.pdf">baseline</a></td>
+        <td>0.13</td>
+        <td>51.17</td>
         <td>94.92</td>
         <td>0.59</td>
         <td>30.13</td>
-        <td>0.13</td>
-        <td>51.17</td>
       </tr>
       <tr>
         <td><a href="https://openaccess.thecvf.com/content/WACV2024/papers/Shoeb_Have_We_Ever_Encountered_This_Before_Retrieving_Out-of-Distribution_Road_Obstacles_WACV_2024_paper.pdf">RbA</a></td>
+        <td>0.23</td>
+        <td>16.88</td>
         <td>93.76</td>
         <td>0.81</td>
         <td>48.52</td>
-        <td>0.23</td>
-        <td>16.88</td>
       </tr>
       <tr>
         <td><a href="https://github.com/vojirt/JSRNet">JSR-Net</a></td>
+        <td>-19.30</td>
+        <td>301.52</td>
         <td>59.66</td>
         <td>19.49</td>
         <td>2.11</td>
-        <td>-19.30</td>
-        <td>301.52</td>
       </tr>
       <tr>
         <td><a href="https://github.com/vojirt/DaCUP">DaCUP</a></td>
+        <td>-2.26</td>
+        <td>280.74</td>
         <td>83.13</td>
         <td>3.77</td>
         <td>12.93</td>
-        <td>-2.26</td>
-        <td>280.74</td>
       </tr>
       <tr>
         <td><a href="https://github.com/vojirt/PixOOD">PixOOD</a></td>
+        <td>0.00</td>
+        <td>14.36</td>
         <td>96.80</td>
         <td>0.29</td>
         <td>38.92</td>
-        <td>0.00</td>
-        <td>14.36</td>
       </tr>
       <tr>
         <td><a href="https://github.com/matejgrcic/Open-set-M2F/tree/uno_samv2">UNO-SAM2</a></td>
+        <td>0.37</td>
+        <td>3.98</td>
         <td>88.10</td>
         <td>0.22</td>
         <td>26.57</td>
-        <td>0.37</td>
-        <td>3.98</td>
       </tr>
       </tbody>
     </table>
