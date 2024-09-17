@@ -30,6 +30,10 @@ table {
     margin-right: auto;
 }
 
+table.datatable {
+    white-space: nowrap;
+}
+
 th + th {
     border-left: 1px solid #FFFFFF;
 }

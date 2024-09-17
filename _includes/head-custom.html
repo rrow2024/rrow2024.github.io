@@ -10,7 +10,15 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script> <!--add dataTables-->
 <script>
     $(document).ready( function () {
-    $('table.datatable').DataTable();
+        $('table.datatable').DataTable({
+            ordering: true,
+            order: [],
+            paging: false,
+            columnDefs: [{
+                orderable: false,
+                targets: "no-sort"
+            }]  
+        });
     } );
 </script>
 {% endif %}
